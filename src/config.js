@@ -1,3 +1,3 @@
 export default {
-  dataUrl: '//anvaka.github.io/galactic-data/'
+  dataUrl: '//dhaitz.github.io/galactic-data/'
 };
