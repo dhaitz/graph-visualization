@@ -1,6 +1,6 @@
-# Software Galaxies
+# Graph Galaxies
 
-Everything based on the awesome work of Andrei Kashcha github.com/anvaka.
+Everything based on the awesome work of [Andrei Kashcha](https://github.com/anvaka).
 
 This repository combines visualizations of major software package managers.
 
@@ -31,6 +31,8 @@ server address in
     };
     
 
+This requires a http-server running with a computed graph layout.
+
 
     npm i
     npm start
@@ -40,9 +42,10 @@ This will start a local development server with auto-rebuild.
 
 # Remote (on GitHub-Pages)
 
-# upload data
+##### Upload data
 
-## Build and deploy
+
+##### Build and deploy
 
 	# build
     npm run build
@@ -52,3 +55,5 @@ This will start a local development server with auto-rebuild.
     git add .
     git commit -m 'push to gh-pages'
     git push --force git@github.com:dhaitz/graph-visualization.git master:gh-pages
+	
+##### Adjust welcome screen
