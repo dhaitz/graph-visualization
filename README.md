@@ -57,3 +57,8 @@ This will start a local development server with auto-rebuild.
     git push --force git@github.com:dhaitz/graph-visualization.git master:gh-pages
 	
 ##### Adjust welcome screen
+
+
+##### Open
+
+https://dhaitz.github.io/graph-visualization/
