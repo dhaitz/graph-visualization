@@ -1,13 +1,12 @@
-# Install packages
-For graph generation: https://github.com/anvaka/allpypi
-For visualization: https://github.com/anvaka/pm
+# *** work in progress ***
 
+# Create Your Own Visualizations
 
-# Prepare data and compute graph layout
+## Prepare data and compute graph layout
 
 see https://github.com/dhaitz/graph-layout-computation for instructions
 
-# Store graph data
+## Store graph data
 graphs folder structure:
 
 * `graphs` parent folder
@@ -27,7 +26,7 @@ for each subfolder
 
 
 
-# Local development
+## Local development
 
 
     git clone https://github.com/dhaitz/graph-visualization
@@ -84,7 +83,7 @@ or
 
 
 
-# Remote (on GitHub-Pages)
+## Remote (on GitHub-Pages)
 
 ##### Upload data
 
