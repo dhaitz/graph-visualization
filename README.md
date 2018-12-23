@@ -2,12 +2,23 @@
 
 Everything based on the awesome work of [Andrei Kashcha](https://github.com/anvaka).
 
-This repository combines visualizations of major software package managers.
+which contains many awesome graphs of package dependencies for various programming languages.
+http://anvaka.github.io/pm/#/
 
-All visualizations are available here: http://anvaka.github.io/pm/#/
+## Navigation and display instruction
+See [here](https://github.com/anvaka/pm/tree/master/about).
 
-Please read [operating manual](https://github.com/dhaitz/graph-visualization/tree/master/about#software-galaxies-documentation) -
-it is short and describes basic navigation principles.
+The `ml` parameter in the url controls the maximum length for a link to be displayed. 
+
+Increase it to see longer links, but it might obscure view and slow down.
+
+Reload in new tab.
+
+## Setup locally
+## Setup remote
+
+
+
 
 # Prerequisite: graph layout
 
