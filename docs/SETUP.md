@@ -19,12 +19,15 @@ See https://github.com/dhaitz/graph-layout-computation to compute the graph layo
 This will start a local development server with auto-rebuild.
 
 Graph node size is the number of in-edges.
-Node color is set automatically.
+Edge colors are set automatically.
 
 
 ## 5. Open page in browser
 
-Open `http://127.0.0.1:8080` in browser
+Open `http://127.0.0.1:8080` in browser.
+
+After the graph layout files have changed or when loading another graph,
+likely the browser cache has to be cleared.
 
 ## 6. Navigate and explore
 
