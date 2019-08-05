@@ -18,6 +18,9 @@ See https://github.com/dhaitz/graph-layout-computation to compute the graph layo
 
 This will start a local development server with auto-rebuild.
 
+Graph node size is the number of in-edges.
+Node color is set automatically.
+
 
 ## 5. Open page in browser
 
