@@ -7,8 +7,8 @@ See [here](http://anvaka.github.io/pm/#/)
 for some awesome graph visualizations of software package dependencies.
 
 ## Navigation instruction
-See [navigation guide](https://github.com/dhaitz/graph-visualization/blob/master/docs/NAVIGATION.md).
+See [navigation guide](docs/NAVIGATION.md).
 
 ## Create your own graph visualization
 
-See [setup instructions](https://github.com/dhaitz/graph-visualization/blob/master/docs/SETUP.md).
+See [setup instructions](docs/SETUP.md).
