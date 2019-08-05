@@ -2,7 +2,6 @@
  * Graph loader downloads graph from repository. Each graph consist of multiple
  * files:
  *
- * manifest.json - declares where the last version of the graph is stored.
  * positions.bin - a binary file of int32 trpilets. Each triplet defines
  *   node position in 3d space. Index of triplet is considered as node id.
  * links.bin - a sequence of edges. Read https://github.com/anvaka/ngraph.tobinary#linksbin-format
@@ -39,13 +38,9 @@ function loadGraph(name, progress) {
   var inLinks = [];
 
   // todo: handle errors
-  var manifestEndpoint = config.dataUrl + name;
-  var galaxyEndpoint = manifestEndpoint;
+  var galaxyEndpoint = config.dataUrl;
 
-  var manifest;
-
-  return loadManifest()
-    .then(loadPositions)
+  return loadPositions()
     .then(loadLinks)
     .then(loadLabels)
     .then(convertToGraph);
@@ -57,39 +52,6 @@ function loadGraph(name, progress) {
       outLinks: outLinks,
       inLinks: inLinks
     });
-  }
-
-  function loadManifest() {
-    return request(manifestEndpoint + '/manifest.json?nocache=' + (+new Date()), {
-      responseType: 'json'
-    }).then(setManifest);
-  }
-
-  function setManifest(response) {
-    manifest = response;
-    var version = getFromAppConfig(manifest) || manifest.last;
-    if (manifest.endpoint) {
-      // the endpoint is overridden. Since we trust manifest endpoint, we also
-      // trust overridden endpoint:
-      galaxyEndpoint = manifest.endpoint;
-    } else {
-      galaxyEndpoint = manifestEndpoint;
-    }
-    galaxyEndpoint += '/' + version;
-    appConfig.setManifestVersion(version);
-  }
-
-  function getFromAppConfig(manifest) {
-    var appConfigVersion = appConfig.getManifestVersion();
-    var approvedVersions = manifest && manifest.all;
-
-    // default to the last version:
-    if (!approvedVersions || !appConfigVersion) return;
-
-    // If this version is whitelisted, let it through:
-    if (approvedVersions.indexOf(appConfigVersion) >= 0) {
-      return appConfigVersion;
-    }
   }
 
   function loadPositions() {
