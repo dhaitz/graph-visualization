@@ -4,7 +4,7 @@
 
 ## Prepare data and compute graph layout
 
-see https://github.com/dhaitz/graph-layout-computation for instructions
+See https://github.com/dhaitz/graph-layout-computation to compute the graph layout files.
 
 ## Store graph data
 graphs folder structure:
@@ -28,18 +28,8 @@ for each subfolder
 
 ## Local development
 
-
     git clone https://github.com/dhaitz/graph-visualization
     cd graph-visualization
-
-
-
-* `config.js` in `pm/src/` folder:
-  
-    export default {
-      dataUrl: '//127.0.0.1:8080/'
-    };
-    
 
 This requires a http-server running with a computed graph layout.
 
