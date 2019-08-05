@@ -8,7 +8,7 @@ var defaultConfig = {
   pos: {x : 0, y: 0, z: 0 },
   lookAt: {x: 0, y: 0, z: 0, w: 1},
   showLinks: true,
-  maxVisibleDistance: 150,
+  maxVisibleDistance: 400,
   scale: 1.75
 };
 
@@ -109,7 +109,7 @@ function appConfig() {
     // only those that modified.
     var pos = hashConfig.pos;
     var lookAt = hashConfig.lookAt;
-    var hash = '#/name/?cx=' + Math.round(pos.x) +
+    var hash = '#/?cx=' + Math.round(pos.x) +
       '&cy=' + Math.round(pos.y) +
       '&cz=' + Math.round(pos.z) +
       '&lx=' + lookAt.x.toFixed(4) +
@@ -167,7 +167,7 @@ function appConfig() {
       w: getNumber(query.lw || 1)
     };
 
-    var showLinks = (query.l === '1');
+    var showLinks = (query.l !== '0');
 
     return {
       pos: normalize(pos),
