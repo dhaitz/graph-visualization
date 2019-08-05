@@ -5,7 +5,8 @@ import appEvents from './service/appEvents.js';
 
 export default class GalaxyPage extends React.Component {
   render() {
-    appEvents.downloadGraphRequested.fire('')
+    appEvents.downloadGraphRequested.fire('');
+    appEvents.queryChanged.fire();
 
     return (
       <div>

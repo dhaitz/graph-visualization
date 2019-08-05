@@ -9,8 +9,7 @@ var defaultConfig = {
   lookAt: {x: 0, y: 0, z: 0, w: 1},
   showLinks: true,
   maxVisibleDistance: 150,
-  scale: 1.75,
-  manifestVersion: 0
+  scale: 1.75
 };
 
 export default appConfig();
@@ -26,9 +25,7 @@ function appConfig() {
     getScaleFactor: getScaleFactor,
     getMaxVisibleEdgeLength: getMaxVisibleEdgeLength,
     setCameraConfig: setCameraConfig,
-    setShowLinks: setShowLinks,
-    getManifestVersion: getManifestVersion,
-    setManifestVersion: setManifestVersion
+    setShowLinks: setShowLinks
   };
 
   appEvents.toggleLinks.on(toggleLinks);
@@ -40,10 +37,6 @@ function appConfig() {
 
   function getScaleFactor() {
     return hashConfig.scale;
-  }
-
-  function getManifestVersion() {
-    return hashConfig.manifestVersion;
   }
 
   function getMaxVisibleEdgeLength() {
@@ -68,6 +61,9 @@ function appConfig() {
 
   function queryChanged() {
     var currentHashConfig = parseFromHash(window.location.hash);
+
+    console.log(window.location.hash);
+
     var cameraChanged = !same(currentHashConfig.pos, hashConfig.pos) ||
                         !same(currentHashConfig.lookAt, hashConfig.lookAt);
     var showLinksChanged = hashConfig.showLinks !== currentHashConfig.showLinks;
@@ -79,7 +75,6 @@ function appConfig() {
     if (showLinksChanged) {
       setShowLinks(currentHashConfig.showLinks);
     }
-    setManifestVersion(currentHashConfig.manifestVersion);
   }
 
   function setShowLinks(linksVisible) {
@@ -87,16 +82,6 @@ function appConfig() {
     hashConfig.showLinks = linksVisible;
     api.fire('showLinks');
     updateHash();
-  }
-
-  function setManifestVersion(version) {
-    if (version === hashConfig.manifestVersion) return;
-    hashConfig = parseFromHash(window.location.hash);
-    hashConfig.manifestVersion = version;
-    updateHash();
-
-    var name = scene.getGraphName();
-    appEvents.downloadGraphRequested.fire(name);
   }
 
   function setCameraConfig(pos, lookAt) {
@@ -130,8 +115,7 @@ function appConfig() {
       '&lw=' + lookAt.w.toFixed(4) +
       '&ml=' + hashConfig.maxVisibleDistance +
       '&s=' + hashConfig.scale +
-      '&l=' + (hashConfig.showLinks ? '1' : '0') +
-      '&v=' + hashConfig.manifestVersion;
+      '&l=' + (hashConfig.showLinks ? '1' : '0');
 
     setHash(hash);
   }
@@ -187,8 +171,7 @@ function appConfig() {
       lookAt: normalize(lookAt),
       showLinks: showLinks,
       maxVisibleDistance: getNumber(query.ml, defaultConfig.maxVisibleDistance),
-      scale: getNumber(query.s, defaultConfig.scale),
-      manifestVersion: query.v || defaultConfig.manifestVersion
+      scale: getNumber(query.s, defaultConfig.scale)
     };
   }
 }
