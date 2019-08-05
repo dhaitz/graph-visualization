@@ -1,60 +1,30 @@
-# *** work in progress ***
-
 # Create Your Own Visualizations
 
-## Prepare data and compute graph layout
+## 1. Prepare data and compute graph layout
 
 See https://github.com/dhaitz/graph-layout-computation to compute the graph layout files.
 
-## Set up graph data 'server'
-graphs folder structure:
-
-* `graphs` parent folder
-* Own folder `mygraph`
-* labels.json links.bin positions.bin meta.json in own folder
-* individual data folder in `graphs`, each containing the bin/json files
-* in `graphs`, put a `manifest.json` with following content:
+## 2. Set up graph data server
+* In your terminal, move to the folder with the created graph layout, i.e. the folder containing the `labels.json`, `links.bin` and `positions.bin` files. 
+* Start a local webserver with `http-server --cors -p 8082`
 
 
-    {
-      "all": [
-        "mygraph"
-      ],
-      "last": "mygraph"
-    }
-
-for each subfolder.
-
-
-
-* start webserver with `http-server --cors -p 8082` in PARENT dir of `graphs`
-
-Edit .html 
-
-
-## Local development
+## 3. Start galaxy
 
     git clone https://github.com/dhaitz/graph-visualization
     cd graph-visualization
-
-This requires a http-server running with a computed graph layout.
-
-
     npm i
     npm start
 
 This will start a local development server with auto-rebuild.
 
 
+## 5. Open page in browser
 
+Open `http://127.0.0.1:8080` in browser
 
-## Run
+## 6. Navigate and explore
 
-* Open `http://127.0.0.1:8080` in browser to see welcome screen
+See `NAVIGATION.md` for navigation and view options.
 
-
-or
-
-
-* Open `http://127.0.0.1:8080/#/galaxy/graphs` in browser to open graph directly
 
