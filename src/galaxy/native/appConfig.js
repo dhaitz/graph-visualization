@@ -109,7 +109,7 @@ function appConfig() {
     // only those that modified.
     var pos = hashConfig.pos;
     var lookAt = hashConfig.lookAt;
-    var hash = '#/?cx=' + Math.round(pos.x) +
+    var hash = '#/name/?cx=' + Math.round(pos.x) +
       '&cy=' + Math.round(pos.y) +
       '&cz=' + Math.round(pos.z) +
       '&lx=' + lookAt.x.toFixed(4) +
