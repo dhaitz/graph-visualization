@@ -27,7 +27,7 @@ Edge colors are set automatically.
 Open `http://127.0.0.1:8080` in browser.
 
 After the graph layout files have changed or when loading another graph,
-likely the browser cache has to be cleared.
+likely the browser cache has to be cleared ("deep refresh").
 
 ## 6. Navigate and explore
 
